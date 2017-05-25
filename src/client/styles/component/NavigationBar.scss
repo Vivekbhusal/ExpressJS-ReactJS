@@ -1,0 +1,36 @@
+.store-navbar-wrapper {
+  .store-navbar {
+    height: 155px;
+    background: $navbarBackground;
+    color: white;
+    padding: 30px 45px;
+
+    .total-product-wrapper {
+      display: inline-block;
+      border-right: 1px solid white;
+      padding-right: 35px;
+    }
+
+    .total-cost-wrapper {
+      display: inline-block;
+      padding-left: 31px;
+    }
+
+    .total-product-wrapper,
+    .total-cost-wrapper {
+      .total-label {
+        text-transform: uppercase;
+        font-size: 13px;
+        display: table-caption;
+        line-height: 1.7rem;
+        font-weight: 500;
+      }
+
+      .total-number {
+        font-size: 30px;
+        font-weight: 300;
+        margin-top: 5px;
+      }
+    }
+  }
+}

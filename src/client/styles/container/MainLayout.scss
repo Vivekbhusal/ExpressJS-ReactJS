@@ -1,0 +1,12 @@
+@import "../component/NavigationBar";
+@import "../component/ViewSelector";
+
+.store-container-wrapper {
+  &.center {
+    margin-left:50%;
+    transform: translateX(-50%);
+  }
+
+  @import "../component/ListView";
+
+}

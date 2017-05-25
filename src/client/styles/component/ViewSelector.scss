@@ -1,0 +1,25 @@
+$selectorDimension : 39px;
+
+.view-selector {
+  display: inline-block;
+  float: right;
+  margin-top: 25px;
+
+  .list {
+    content: svg-load('list.svg');
+    width: $selectorDimension;
+    height: $selectorDimension;
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+
+  }
+  .grid {
+    content: svg-load('grid.svg');
+    width: $selectorDimension;
+    height: $selectorDimension;
+    display: inline-block;
+    cursor: pointer;
+
+  }
+}
