@@ -9,17 +9,66 @@
     }
   }
 
-  .actions {
-    .delete {
-      content: svg-load('close.svg');
-      width: 20px;
-      height: 20px;
-      display: inline-block;
-      cursor: pointer;
+  .name {
+    @include respond-to(xs) {
+      margin-top: 10px;
+      &::before {
+        content : "Name";
+        display: block;
+        font-weight: 600;
+        color: #0b9a98;
+      }
+    }
+  }
+
+  .unit-cost {
+    @include respond-to(xs) {
+      margin-top: 10px;
+      &::before {
+        content: "Unit Cost";
+        display: block;
+        font-weight: 600;
+        color: #0b9a98;
+      }
+    }
+  }
+
+  .pack-size {
+    @include respond-to(xs) {
+      margin-top: 10px;
+      &::before {
+        content: "Pack Size";
+        display: block;
+        font-weight: 600;
+        color: #0b9a98;
+      }
+    }
+  }
+
+  .unit-carton {
+    @include respond-to(xs) {
+      margin-top: 10px;
+      &::before {
+        content: "Units in carton";
+        display: block;
+        font-weight: 600;
+        color: #0b9a98;
+      }
     }
   }
 
   .carton-number {
+
+    @include respond-to(xs) {
+      margin-top: 10px;
+      &::before {
+        content: "No. of Cartons";
+        display: block;
+        font-weight: 600;
+        color: #0b9a98;
+      }
+    }
+
     input {
       width: 35px;
       text-align: center;
@@ -31,4 +80,35 @@
       color: red;
     }
   }
+
+  .value {
+    @include respond-to(xs) {
+      margin-top: 10px;
+      &::before {
+        content: "Value";
+        display: block;
+        font-weight: 600;
+        color: #0b9a98;
+      }
+    }
+  }
+
+  .actions {
+    @include respond-to(xs) {
+      margin-top: 15px;
+    }
+    .delete {
+      content: svg-load('close.svg');
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      cursor: pointer;
+      @include respond-to(xs) {
+        background: #0b9a98;
+        border-radius: 50%;
+      }
+    }
+  }
+
+
 }

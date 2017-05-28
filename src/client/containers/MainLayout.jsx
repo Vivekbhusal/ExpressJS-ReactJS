@@ -27,7 +27,7 @@ class MainLayout extends Component {
 
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-10 store-container-wrapper center">
+            <div className="col-md-10 col-xs-12 store-container-wrapper center">
               <ViewSelector
                 displayType={this.state.displayType}
                 handleChange={this.changeDisplayType}

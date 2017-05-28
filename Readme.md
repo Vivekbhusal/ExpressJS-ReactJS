@@ -30,6 +30,14 @@
  8. User can add product multiple times
  
  9. Total products is equal to total number of individual item (not the total number of cartons). Increasing the number of cartons on one product wont increase total product but would change total price.
+ 
+ 10. It is responsive for mobile interface
+ 
+# Improvements:
+
+1. Pagination
+2. More test coverage
+
 
 # Get Started
 
@@ -76,6 +84,18 @@ Endpoint `api/products` give the list of products from a json file called `paylo
 
 Frontend is build using ReactJS for view and Redux for state management.
 Files related to client are inside `src/client`.
+
+## Test
+I am using Jest and Enzyme for testing. You can find the test files inside `test` folder. 
+
+To run tests
+
+> $ npm test
+
+## Eslist
+
+To run eslist for the project
+> $ gulp lint
 
 
 

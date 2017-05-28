@@ -24,7 +24,7 @@ class NavigationBar extends Component {
             </div>
             <div className="total-cost-wrapper">
               <div className="total-label">Total Cost</div>
-              <div className="total-number">{`$${this.getTotalValue()}`}</div>
+              <div className="total-number"><span className="dollar-sign">$</span>{this.getTotalValue()}</div>
             </div>
           </div>
         </div>

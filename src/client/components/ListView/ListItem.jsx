@@ -36,30 +36,30 @@ class ListItem extends Component {
     const { item, itemDetails, handleRemove } = this.props;
     return (
       <div className="row list-item">
-        <div className="col-md-2 image">
+        <div className="col-md-2 col-xs-12 image">
           <img src={itemDetails.imageUrl} alt="product" />
         </div>
-        <div className="col-md-2 name">
+        <div className="col-md-2 col-xs-7 name">
           {itemDetails.title}
         </div>
-        <div className="col-md-1 unit-cost">
+        <div className="col-md-1 col-xs-5 unit-cost">
           {`$${itemDetails.unitCost}`}
         </div>
-        <div className="col-md-2 pack-size">
+        <div className="col-md-2 col-xs-7 pack-size">
           {itemDetails.packSize}
         </div>
-        <div className="col-md-1 unit-carton">
+        <div className="col-md-1 col-xs-5 unit-carton">
           {itemDetails.unitsInCartons}
         </div>
-        <div className="col-md-2 carton-number">
+        <div className="col-md-2 col-xs-7 carton-number">
           <input value={this.state.noOfCarton} onChange={this.handleCartonChange} />
           <small className="errorMessage">{this.state.error}</small>
 
         </div>
-        <div className="col-md-1 value">
+        <div className="col-md-1 col-xs-5 value">
           {`$${item.value.toFixed(2)}`}
         </div>
-        <div className="col-md-1 actions">
+        <div className="col-md-1 col-xs-12 actions">
           <span className="delete" onClick={handleRemove} />
         </div>
       </div>
@@ -79,8 +79,8 @@ ListItem.propTypes = {
     packSize: PropTypes.number,
     unitsInCartons: PropTypes.number,
   }),
-  handleCartonChange: PropTypes.function,
-  handleRemove: PropTypes.function,
+  handleCartonChange: PropTypes.func,
+  handleRemove: PropTypes.func,
 };
 
 ListItem.defaultProps = {

@@ -39,6 +39,11 @@
       margin-right: 36px;
       min-height: 290px;
 
+      @include respond-to(xs) {
+        margin-right: 0;
+      }
+
+
       .recommendation-bar {
         display: flex;
         background: rgba(12, 193, 193, 0.36);

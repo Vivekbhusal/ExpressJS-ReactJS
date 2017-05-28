@@ -26,6 +26,10 @@
       font-size: 12px;
       margin: 14px 0;
       font-weight: 500;
+
+      @include respond-to(xs) {
+        display: none;
+      }
       .pack-size {
         small {
           display: block;
