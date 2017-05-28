@@ -1,29 +1,16 @@
 import React, {Component} from 'react';
+import ClassNames from 'classnames';
 
 export default class ViewSelector extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            selected : "list"
-        };
-
-        this.onSelect = this.onSelect.bind(this);
-    }
-
-    onSelect(type) {
-        this.setState({
-            selected : type
-        })
-    }
-
     render() {
+        const gridClass = ClassNames('grid', {'active': this.props.displayType == 'grid'})
+        const listClass = ClassNames('list', {'active': this.props.displayType == 'list'})
         return (
             <div className="row">
                 <div className="view-selector">
-                    <span className="list" onClick={() => this.onSelect("list")}></span>
-                    <span className="grid" onClick={() => this.onSelect("grid")}></span>
+                    <span className={ gridClass } onClick={() => this.props.handleChange('grid')}></span>
+                    <span className={ listClass } onClick={() => this.props.handleChange('list')}></span>
                 </div>
             </div>
         )

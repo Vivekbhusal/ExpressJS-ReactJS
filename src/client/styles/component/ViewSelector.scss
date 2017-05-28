@@ -1,25 +1,39 @@
 $selectorDimension : 39px;
 
+
 .view-selector {
   display: inline-block;
   float: right;
   margin-top: 25px;
 
   .list {
-    content: svg-load('list.svg');
+    content: svg-load('list.svg', fill=#000000, stroke=#000000);
     width: $selectorDimension;
     height: $selectorDimension;
     display: inline-block;
-    margin-right: 20px;
     cursor: pointer;
+
+    &:hover {
+      content: svg-load('list.svg', fill=$navbarBackground, stroke=$navbarBackground);
+    }
+    &.active {
+      content: svg-load('list.svg', fill=$navbarBackground, stroke=$navbarBackground);
+    }
 
   }
   .grid {
-    content: svg-load('grid.svg');
+    content: svg-load('grid.svg', fill=#000000, stroke=#000000);
     width: $selectorDimension;
     height: $selectorDimension;
     display: inline-block;
     cursor: pointer;
+    margin-right: 20px;
 
+    &:hover {
+      content: svg-load('grid.svg', fill=$navbarBackground, stroke=$navbarBackground);
+    }
+    &.active {
+      content: svg-load('grid.svg', fill=$navbarBackground, stroke=$navbarBackground);
+    }
   }
 }

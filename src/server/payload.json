@@ -10,7 +10,7 @@
                "id":"10600",
                "title":"Hampton Cookset - 8 Piece",
                "category":"STAINLESS STEEL",
-               "imageUrl": "http://localhost/img/001.jpg",
+               "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61C1G1vV04L._SY355_.jpg",
                "unitsInCartons": 10,
                "unitCost":4.52,
                "packSize":10,
@@ -20,7 +20,7 @@
       },
       {
          "recommendation":{  
-            "currentLevel":79,
+            "currentLevel":82,
             "maxLevel":100
          },
          "items":[  
@@ -28,7 +28,7 @@
                "id":"10870",
                "title":"MELAMINE BOWL",
                "category":"BOWLS",
-               "imageUrl":"http://localhost/img/001.jpg",
+               "imageUrl":"http://www.emmabridgewater.co.uk/content/ebiz/eb/invt/hear494/pink-hearts-melamine-bowl-medium.jpg",
                "unitsInCartons":6,
                "unitCost":0.93,
                "packSize":5,
@@ -38,11 +38,88 @@
                "id":"10820",
                "title":"PP YUM YUM CUP",
                "category":"CUPS/MUGS",
-               "imageUrl":"http://localhost/img/002.jpg",
+               "imageUrl":"https://cdn.ztore.com/images/ztore/production/product/640px/1010292_1.jpg",
                "unitsInCartons":12,
                "unitCost":0.7,
                "packSize":25,
                "secondaryCategory":"Kids Home"
+            }
+         ]
+      },
+      {
+
+         "recommendation":{
+            "currentLevel":89,
+            "maxLevel":100
+         },
+         "items":[
+            {
+               "id":"10872",
+               "title":"Men's Watch",
+               "category":"Watch",
+               "imageUrl":"http://www.danpontefract.com/wp-content/uploads/2013/05/watch.jpg",
+               "unitsInCartons":1,
+               "unitCost":100,
+               "packSize":1,
+               "secondaryCategory":"Watch"
+            },
+            {
+               "id":"10833",
+               "title":"Women's Watch",
+               "category":"Watch",
+               "imageUrl":"https://n3.sdlcdn.com/imgs/a/t/b/Fossil-Es3588-Women-Watch-SDL861561765-1-3cfa7.jpg",
+               "unitsInCartons":1,
+               "unitCost":130,
+               "packSize":1,
+               "secondaryCategory":"Watch"
+            }
+         ]
+      },
+      {
+
+         "recommendation":{
+            "currentLevel":70,
+            "maxLevel":100
+         },
+         "items":[
+            {
+               "id":"10970",
+               "title":"Sony Zeiss 8x",
+               "category":"Camera",
+               "imageUrl":"https://target.scene7.com/is/image/Target/15144366?wid=520&hei=520&fmt=pjpeg",
+               "unitsInCartons":6,
+               "unitCost":200,
+               "packSize":1,
+               "secondaryCategory":"Camera"
+            }
+         ]
+      },
+      {
+
+         "recommendation":{
+            "currentLevel":59,
+            "maxLevel":100
+         },
+         "items":[
+            {
+               "id":"10973",
+               "title":"Canon 80D DSLR",
+               "category":"Camera",
+               "imageUrl":"http://thewirecutter.com/wp-content/uploads/2016/07/midrange-dslr-canon-80d-hero-1081-630.jpg",
+               "unitsInCartons":6,
+               "unitCost":600,
+               "packSize":1,
+               "secondaryCategory":"Camera"
+            },
+            {
+               "id":"11820",
+               "title":"Camera Stand",
+               "category":"Camera Stand",
+               "imageUrl":"https://sc01.alicdn.com/kf/HTB1WnU9FFXXXXXnXpXXq6xXFXXXd/200904909/HTB1WnU9FFXXXXXnXpXXq6xXFXXXd.jpg",
+               "unitsInCartons":12,
+               "unitCost":400,
+               "packSize":1,
+               "secondaryCategory":"Camera Stand"
             }
          ]
       }

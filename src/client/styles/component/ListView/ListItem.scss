@@ -21,8 +21,14 @@
 
   .carton-number {
     input {
-      width : 35px;
+      width: 35px;
       text-align: center;
+      display: block;
+      margin: 0 auto;
+    }
+
+    small {
+      color: red;
     }
   }
 }

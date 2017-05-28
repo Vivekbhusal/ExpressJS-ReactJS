@@ -1,0 +1,130 @@
+.gridview-list {
+  .row {
+    .product-item-wrapper-container {
+      margin-top: 40px;
+
+      .add-action {
+        height: 27px;
+        width: 27px;
+        background: #0b9a98;
+        position: absolute;
+        right: 62px;
+        top: 0;
+        margin-top: -13px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &::before {
+          content: "+";
+          font-size: 18px;
+          color: white;
+        }
+        
+        &:hover {
+          background: #0fc3c2;
+          box-shadow: 0 3px #ccc;
+        }
+
+        &:active {
+          background: #0fc3c2;
+          transform: translateY(3px);
+          box-shadow: none;
+        }
+      }
+    }
+    .product-item-wrapper {
+      box-shadow: 0 2px 1px 0 #888888;
+      background: white;
+      margin-right: 36px;
+      min-height: 290px;
+
+      .recommendation-bar {
+        display: flex;
+        background: rgba(12, 193, 193, 0.36);
+        margin-top: 16px;
+        padding: 5px;
+        .total-item-wrapper {
+          flex: 1;
+          text-align: center;
+
+          .total-item {
+            .number,
+            .label{
+              color: #0b9a98;
+              font-weight: 500;
+              font-size: 18px;
+              text-transform: uppercase;
+            }
+            .label {
+              font-size: 11px;
+            }
+
+          }
+          .desc {
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+        }
+        .recommended-percentage {
+          flex: 1;
+          text-align: center;
+          .percentage {
+            color: #0b9a98;
+            font-weight: 500;
+            font-size: 18px;
+            text-transform: uppercase;
+          }
+          .desc {
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .item-wrapper {
+        display: flex;
+
+        .item {
+          flex: 1;
+          padding: 8px;
+          .image {
+            text-align: center;
+            margin-bottom: 10px;
+            img {
+              width: 100px;
+              height: 100px;
+              object-fit: cover;
+            }
+          }
+          .name {
+            color: grey;
+          }
+
+          .amount {
+            margin: 5px 0;
+            text-align: right;
+            small {
+              display: block;
+            }
+          }
+          .unit-per-carton {
+            margin-top: 10px;
+            color: lightgrey;
+            font-size: 10px;
+          }
+          .per-unit-price {
+            color: lightgrey;
+            font-size: 10px;
+          }
+
+          &+.item {
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}

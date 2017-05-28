@@ -1,37 +1,94 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { isInteger } from 'lodash';
 
-export default class ListItem extends Component {
+class ListItem extends Component{
 
-    render() {
-        const {image, name, unit_cost, pack_size, carton_unit, no_of_carton, value} = this.props.item;
+  constructor(props) {
+    super(props);
+    this.state = {
+        noOfCarton: this.props.item.noOfCarton,
+        error: null,
+      };
 
-        return (
-            <div className="row list-item">
+    this.handleCartonChange = this.handleCartonChange.bind(this);
+  }
+
+  handleCartonChange(event) {
+
+    if (isInteger(parseInt(event.target.value)) && event.target.value < 100) {
+      this.setState({
+          noOfCarton: event.target.value,
+          error: null,
+        });
+
+      return this.props.handleCartonChange(this.props.itemDetails, event.target.value);
+    }
+
+    this.setState({
+        noOfCarton: event.target.value,
+        error: 'Only positive number < 100 accepted',
+      });
+
+  }
+
+  render() {
+    const { item, itemDetails, handleRemove } = this.props;
+    return (
+        <div className="row list-item">
                 <div className="col-md-2 image">
-                    <img src={image}/>
+                    <img src={itemDetails.imageUrl} alt="product" />
                 </div>
                 <div className="col-md-2 name">
-                    {name}
+                    {itemDetails.title}
                 </div>
                 <div className="col-md-1 unit-cost">
-                    {`$${unit_cost}`}
+                    {`$${itemDetails.unitCost}`}
                 </div>
                 <div className="col-md-2 pack-size">
-                    {pack_size}
+                    {itemDetails.packSize}
                 </div>
                 <div className="col-md-1 unit-carton">
-                    {carton_unit}
+                    {itemDetails.unitsInCartons}
                 </div>
                 <div className="col-md-2 carton-number">
-                    <input value={no_of_carton}/>
+                    <input value={this.state.noOfCarton} onChange={this.handleCartonChange}/>
+                    <small className="errorMessage">{this.state.error}</small>
+
                 </div>
                 <div className="col-md-1 value">
-                    {`$${value}`}
+                    {`$${item.value.toFixed(2)}`}
                 </div>
                 <div className="col-md-1 actions">
-                    <span className="delete"></span>
+                    <span className="delete" onClick={ handleRemove } />
                 </div>
             </div>
-        )
-    }
+    );
+  }
 }
+
+// ListItem.propTypes = {
+//   item: PropTypes.shape({
+//     image: PropTypes.string,
+//     name: PropTypes.string,
+//     unitCost: PropTypes.number,
+//     packSize: PropTypes.number,
+//     cartonUnit: PropTypes.number,
+//     noOfCarton: PropTypes.number,
+//     value: PropTypes.number,
+//   }),
+// };
+//
+// ListItem.defaultProps = {
+//   item: {
+//   imageUrl: '',
+//     name: '',
+//     unitCost: 0,
+//     packSize: 0,
+//     cartonUnit: 0,
+//     noOfCarton: 0,
+//     value: 0,
+//   },
+// };
+
+export default ListItem;

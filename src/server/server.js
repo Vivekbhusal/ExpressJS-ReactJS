@@ -1,4 +1,5 @@
 var express = require('express');
+var cors = require('cors');
 var app = express();
 var payload = require('./payload.json');
 
@@ -11,7 +12,7 @@ router.get('/products', function (req, res) {
     res.json(payload);
 });
 
-app.use('/api', router);
+app.use('/api', cors(), router);
 
 app.get('*', function(req, res){
     res.status(404).send({error: true, message: "Invalid request"});

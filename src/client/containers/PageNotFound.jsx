@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-const PageNotFound = ({}) => {
-    return(
-        <div className="page-not-found">
-            <h1>We didn't find the page you were looking for.</h1>
-        </div>
-    )
-};
+const PageNotFound = ({ location }) => (
+  <div className="page-not-found">
+    <h3>{`We didn\'t find the page (${location.pathname}) you were looking for.`}</h3>
+  </div>
+);
 
 export default PageNotFound;

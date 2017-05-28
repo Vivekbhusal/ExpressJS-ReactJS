@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MainLayout from './containers/MainLayout';
+import { Provider } from 'react-redux';
+import Store from './store';
+import Router from './routes';
 
 injectTapEventPlugin();
 
-const App = () => (
-    <MuiThemeProvider>
-        <MainLayout/>
-    </MuiThemeProvider>
-);
-
 ReactDOM.render(
-    <App />,
-    document.getElementById("main")
+    <Provider store={Store}>
+        <Router />
+    </Provider>,
+    document.getElementById('main'),
 );
