@@ -44,7 +44,7 @@ class GridView extends Component {
   renderProductGrid() {
     return this.props.products.products.map((product, key) => {
       const length = product.items.length;
-      const className = `product-item-wrapper-container col-md- ${ length * 2 }`;
+      const className = `product-item-wrapper-container col-md-${length * 2}`;
 
       return (<div key={key} className={className}>
               <div className="product-item-wrapper ">
