@@ -53,4 +53,10 @@ gulp.task("copy:static", function() {
         .pipe(plumber())
         .pipe(gulp.dest('./dist/'));
 });
+
+gulp.task("watch", function() {
+    gulp.watch('src/client/**/*.jsx', ['compile:client:scripts']);
+    gulp.watch('src/client/styles/**/*.scss', ['compile:client:style']);
+});
+
 gulp.task('client', ['compile:client:scripts', 'compile:client:style', 'copy:static']);

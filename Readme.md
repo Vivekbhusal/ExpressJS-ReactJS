@@ -44,6 +44,7 @@ Note: You can either start the client and server with two different command
 
 > $ npm run start-client
 
+
 Note (debug) : You must have port 8080 and 8888 free for client and server.
 
 ### or 
