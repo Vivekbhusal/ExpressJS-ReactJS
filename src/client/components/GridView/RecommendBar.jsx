@@ -1,32 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class RecommendBar extends Component {
-
-  renderBarView(product) {
-    return (
-        <div className="recommendation-bar">
-            <div className="total-item-wrapper">
-                <div className="total-item">
-                    <span className="number">{product.items.length}</span>
-                    <span className="label">Items</span>
-                </div>
-                <div className="desc">
-                    Sells well together*
-                </div>
-            </div>
-            <div className="recommended-percentage">
-                <div className="percentage">{`${product.recommendation.currentLevel}%`}</div>
-                <div className="desc">RECOMMENDED*</div>
-            </div>
+const renderBarView = ({ product }) => (
+  <div className="recommendation-bar">
+    <div className="total-item-wrapper">
+      <div className="total-item">
+        <span className="number">{product.items.length}</span>
+        <span className="label">Items</span>
+      </div>
+      <div className="desc">
+            Sells well together*
         </div>
+    </div>
+    <div className="recommended-percentage">
+      <div className="percentage">{`${product.recommendation.currentLevel}%`}</div>
+      <div className="desc">RECOMMENDED*</div>
+    </div>
+  </div>
     );
-  }
 
-  render() {
-    return this.props.product.items.length > 1
-        ? this.renderBarView(this.props.product)
+const RecommendBar = ({ product }) => product.items.length > 1
+        ? renderBarView({ product })
         : null;
-  }
-}
+
+renderBarView.propTypes = {
+  product: PropTypes.object,
+};
+
+renderBarView.defaultProps = {
+  product: {
+    items: [],
+    recommendation: {},
+  },
+};
+
+
+RecommendBar.propTypes = {
+  product: PropTypes.object,
+};
+
+RecommendBar.defaultProps = {
+  product: {
+    items: [],
+  },
+};
 
 export default RecommendBar;

@@ -1,4 +1,13 @@
 .list-view {
+
+  .empty {
+    text-align: center;
+    margin-top: 80px;
+
+    .message {
+      color: #ea7b00;
+    }
+  }
   .group-item {
     margin-bottom: 20px;
 

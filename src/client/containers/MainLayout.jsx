@@ -8,36 +8,39 @@ class MainLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        displayType: 'grid',
-      };
+      displayType: 'grid',
+    };
 
     this.changeDisplayType = this.changeDisplayType.bind(this);
   }
 
   changeDisplayType(type) {
     this.setState({
-        displayType: type,
-      });
+      displayType: type,
+    });
   }
 
   render() {
     return (
-        <div className="layout-container">
-                <NavigationBar />
+      <div className="layout-container">
+        <NavigationBar />
 
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-10 store-container-wrapper center">
-                            <ViewSelector displayType={this.state.displayType} handleChange={this.changeDisplayType} />
-                            {
-                            this.state.displayType == 'list'
-                            ? <ListView />
-                            : <GridView/>
-                        }
-                        </div>
-                    </div>
-                </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-10 store-container-wrapper center">
+              <ViewSelector
+                displayType={this.state.displayType}
+                handleChange={this.changeDisplayType}
+              />
+              {
+                      this.state.displayType === 'list'
+                      ? <ListView />
+                      : <GridView />
+                  }
             </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

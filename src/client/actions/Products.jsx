@@ -4,14 +4,14 @@ import { URL } from '../constants/URL';
 
 export function getProductList() {
   return {
-      [CALL_API]: {
-          endpoint: URL.GET_PRODUCT_LIST,
-          method: 'GET',
-          types: [
-              ActionTypes.PRODUCT_REQUEST,
-              ActionTypes.PRODUCT_SUCCESS,
-              ActionTypes.PRODUCT_FAILURE,
-          ],
-        },
-    };
+    [CALL_API]: {
+      endpoint: URL.GET_PRODUCT_LIST,
+      method: 'GET',
+      types: [
+        ActionTypes.PRODUCT_REQUEST,
+        ActionTypes.PRODUCT_SUCCESS,
+        ActionTypes.PRODUCT_FAILURE,
+      ],
+    },
+  };
 }

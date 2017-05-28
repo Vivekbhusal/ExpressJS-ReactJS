@@ -39,10 +39,10 @@ class ListItemGroup extends Component {
             flattenDeep(
                 map(
                     this.props.allProducts.products,
-                    (product) => product.items
-                )
+                    product => product.items,
+                ),
             ),
-            { id: id }
+            { id },
     );
   }
 
@@ -60,12 +60,12 @@ class ListItemGroup extends Component {
         {this.getTitleHeader()}
         <div className="grouped-item-list">
           {
-            products.map((product, index) => <ListItem
+            products.map((product, index) => (<ListItem
                 key={index}
                 item={product}
                 itemDetails={this.getProductCompleteData(product.id)}
                 handleCartonChange={this.changeNoOfCarton.bind(this)}
-                handleRemove={() => this.removeItem(product.id)} />
+                handleRemove={() => this.removeItem(product.id)} />)
             )
           }
         </div>
@@ -78,17 +78,19 @@ class ListItemGroup extends Component {
 ListItemGroup.propTypes = {
   id: PropTypes.string,
   products: PropTypes.array,
+  allProducts: PropTypes.object,
 };
 
 ListItemGroup.defaultProps = {
   id: 0,
   products: [],
+  allProducts: {}
 };
 
 function mapStateToProps(state) {
   return {
-      allProducts: state.Product.toJS(),
-    };
+    allProducts: state.Product.toJS(),
+  };
 }
 
 export default connect(mapStateToProps)(ListItemGroup);

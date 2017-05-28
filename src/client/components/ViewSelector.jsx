@@ -1,18 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ClassNames from 'classnames';
+import PropTypes from 'prop-types';
 
-export default class ViewSelector extends Component {
+const ViewSelector = ({ displayType, handleChange }) => {
+  const gridClass = ClassNames('grid', { active: displayType === 'grid' });
+  const listClass = ClassNames('list', { active: displayType === 'list' });
 
-  render() {
-    const gridClass = ClassNames('grid', { active: this.props.displayType == 'grid' });
-    const listClass = ClassNames('list', { active: this.props.displayType == 'list' });
-    return (
-        <div className="row">
-                <div className="view-selector">
-                    <span className={ gridClass } onClick={() => this.props.handleChange('grid')}></span>
-                    <span className={ listClass } onClick={() => this.props.handleChange('list')}></span>
-                </div>
-            </div>
-    );
-  }
-}
+  return (
+    <div className="row">
+      <div className="view-selector">
+        <span className={gridClass} onClick={() => handleChange('grid')} />
+        <span className={listClass} onClick={() => handleChange('list')} />
+      </div>
+    </div>
+  );
+};
+
+ViewSelector.propTypes = {
+  displayType: PropTypes.string,
+  handleChange: PropTypes.func,
+};
+
+ViewSelector.defaultProps = {
+  displayType: 'grid',
+  handleChange: () => {},
+};
+
+export default ViewSelector;

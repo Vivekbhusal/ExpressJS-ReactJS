@@ -8,8 +8,8 @@ import Routes from './routes';
 injectTapEventPlugin();
 
 ReactDOM.render(
-    <Provider store={Store}>
-        <Routes/>
+  <Provider store={Store}>
+      <Routes />
     </Provider>,
     document.getElementById('main'),
 );

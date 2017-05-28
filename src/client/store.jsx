@@ -5,8 +5,8 @@ import reducers from './reducers';
 const store = createStore(
     reducers,
     applyMiddleware(
-        apiMiddleware
-    )
+        apiMiddleware,
+    ),
 );
 
 export default store;

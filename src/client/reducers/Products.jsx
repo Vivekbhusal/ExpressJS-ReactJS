@@ -2,10 +2,10 @@ import Immutable from 'immutable';
 import { ActionTypes } from '../constants/ActionTypes';
 
 const initialState = Immutable.Map({
-    products: [],
-    loading: true,
-    error: false,
-  });
+  products: [],
+  loading: true,
+  error: false,
+});
 
 export default function Products(state = initialState, action) {
   switch (action.type) {

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sum, map, size } from 'lodash';
-class NavigationBar extends Component {
+import PropTypes from 'prop-types';
 
-  constructor(props) {
-    super(props);
-  }
+class NavigationBar extends Component {
 
   getTotalValue() {
     return parseFloat(sum(map(this.props.cart, item => item.value))).toFixed(2);
@@ -35,13 +33,16 @@ class NavigationBar extends Component {
   }
 }
 
-const mapStateToProps = (store) => {
-  return {
-    cart: store.ShoppingCart.toJS(),
-  };
+NavigationBar.propTypes = {
+  cart: PropTypes.object,
+};
+NavigationBar.defaultProps = {
+  cart: {},
 };
 
+const mapStateToProps = store => ({
+  cart: store.ShoppingCart.toJS(),
+});
+
 export default connect(mapStateToProps)(NavigationBar);
-
-
 
